@@ -22,8 +22,8 @@ COLORES_PLAYOFF = {"Sí": VERDE, "No": GRIS}
 ESCALA_PASE = [[0, MORADO], [0.5, "#262730"], [1, VERDE]]   # % de pases en el mapa de calor
 
 # Colores de los dibujos
-TRAZO = "#FAFAFA"   # X, O y bloqueos
-OPACIDAD = 0.35     # sube este número para que se vean más
+TRAZO = "#31333F"   # X, O y bloqueos (gris oscuro, para fondo claro)
+OPACIDAD = 0.18     # sube este número para que se vean más
 
 _FLECHA = ("<defs><marker id='f' markerWidth='10' markerHeight='10' refX='7' refY='5' "
            "orient='auto'><path d='M1,1 L8,5 L1,9' fill='none' stroke='{c}' stroke-width='2'/></marker></defs>")
