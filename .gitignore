@@ -1,0 +1,18 @@
+# Datos que NO se suben
+NFL_2015-2025_limpio.csv
+src/eda_resumen.py
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+
+# Secretos de Streamlit
+.streamlit/secrets.toml
+
+# Basura del sistema / notebooks
+.DS_Store
+Thumbs.db
+.ipynb_checkpoints/
