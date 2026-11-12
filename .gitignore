@@ -1,7 +1,6 @@
 # Datos que NO se suben
 NFL_2015-2025_limpio.csv
 src/eda_resumen.py
-src/eda_clima.py
 
 # Python
 __pycache__/
