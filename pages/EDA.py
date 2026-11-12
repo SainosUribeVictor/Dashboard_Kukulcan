@@ -3,6 +3,7 @@ import plotly.express as px
 import streamlit as st
 
 from src.datos import cargar
+from src.eda_clima import mostrar as mostrar_clima
 from src.estilo import (AZUL, COLORES_PLAYOFF, COLORES_TEMPORADA, COLORES_TIPO,
                         ESCALA_PASE, CARRERA, PASE, VERDE)
 
@@ -29,7 +30,7 @@ partidos = cargar("partidos")
 temp = cargar("equipo_temporada")
 
 if agr is None:
-    st.error("No se encontraron los archivos .prarquet en la carpeta src. "
+    st.error("No se encontraron los archivos .parquet en la carpeta src. "
              "Correr primero el script eda_resumen.")
     st.stop()
 
@@ -65,8 +66,8 @@ if agr_f.empty:
     st.warning("No hay jugadas con estos filtros.")
     st.stop()
 
-tab_datos, tab_jugada, tab_partido, tab_temp = st.tabs(
-    ["Datos", "Jugada", "Partido", "Temporada"])
+tab_datos, tab_jugada, tab_partido, tab_temp, tab_clima = st.tabs(
+    ["Datos", "Jugada", "Partido", "Temporada", "Clima"])
 
 
 def tasas(df: pd.DataFrame, por: list[str]) -> pd.DataFrame:
@@ -421,3 +422,9 @@ with tab_temp:
             if usar_pct:
                 fig.update_xaxes(tickformat=".0%")
             st.plotly_chart(fig, width="stretch")
+
+# ===========================================================================
+# CLIMA
+# ===========================================================================
+with tab_clima:
+    mostrar_clima(filtrar, equipos)
